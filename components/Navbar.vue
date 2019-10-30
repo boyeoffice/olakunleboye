@@ -7,14 +7,17 @@
 			<nuxt-link to="/" rel="index">
 				<i class="fa fa-home"></i>
 			</nuxt-link>
-			<ul>
+		</nav>
+		<ul>
 				<li v-for="link in social">
 					<a target="_blank" :href="link.url">
 						<i :class="link.icon"></i>
 					</a>
 				</li>
 			</ul>
-		</nav>
+			<a href="javascript:void" class="toggle">
+				<i class="fa fa-bars"></i>
+			</a>
 	</div>
 </template>
 
