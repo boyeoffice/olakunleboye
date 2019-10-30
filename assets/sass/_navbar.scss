@@ -5,6 +5,7 @@
 	min-height: 500px;
 	width: 60px;
 	height: 100%;
+	z-index: 3;
 	& .brand {
 		background: $deep-black;
 		display: block;
@@ -47,8 +48,7 @@
 				font-size: 15px;
 				line-height: 16px;
 				height: auto;
-				color:
-				#4d4d4e;
+				color:	#4d4d4e;
 				&:hover {
 					color: $fade-green;
 				}
