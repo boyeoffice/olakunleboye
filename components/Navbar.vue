@@ -5,7 +5,7 @@
 		</nuxt-link>
 		<nav>
 			<nuxt-link to="/" rel="index">
-				<i class="fa fa-home"></i>
+				<i class="icon-hom"></i>
 			</nuxt-link>
 		</nav>
 		<ul>

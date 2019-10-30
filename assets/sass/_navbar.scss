@@ -7,8 +7,13 @@
 	height: 60px;
 	z-index: 3;
 	left: 0;
-	@media only screen and (min-width: 576px) {
+	@include atSmall {
 		position: absolute;
+	}
+	@include atLarge {
+		width: 60px;
+		min-height: 500px;
+		height: 100%;
 	}
 	& .brand {
 		float: left;
@@ -30,29 +35,41 @@
 		position: fixed;
 		text-align: center;
 		width: 100%;
-		height: 210px;
-		opacity: 0;
-		top: 0;
+		height: 60px;
+		opacity: 1;
+		top: 60px;
 		left: 0;
 		@include atSmall {
+			top: 0;
 			opacity: 1;
 			position: absolute;
 			left: 50%;
 			height: 60px;
-			margin-left: -19px;
+			margin-left: -19%;
 			float: left;
 			width: 42%;
 			text-align: left;
 			overflow: hidden;
+		}
+		@include atLarge {
+			height: 210px;
+			top: 50%;
 		}
 		a {
 			font-size: 22px;
 			height: 51px;
 			display: block;
 			line-height: 51px;
+			float: left;
+			width: 20%;
+			&:first-child {
+				margin-left: 0;
+			}
 			@include atSmall {
 				height: 60px;
 				line-height: 60px;
+				float: left;
+				margin-left: 10%;
 			}
 			&.active-link {
 			color: $fade-green;
@@ -74,12 +91,25 @@
 			  height: 60px;
 			  float: right;
 			}
+			@include atLarge {
+				position: absolute;
+				width: 100%;
+				height: auto;
+				float: none;
+				text-align: center;
+				bottom: 34px;
+			}
 			& li {
 				@include atSmall {
 					float: right;
 					height: 60px;
 					line-height: 60px;
 					margin: 0 10px;
+				}
+				@include atLarge {
+					float: none;
+					height: 30px;
+					line-height: 30px;
 				}
 			& a {
 				padding: 7px 0;
@@ -91,6 +121,9 @@
 				@include atSmall {
 					line-height: 60px;
 					padding: 0;
+				}
+				@include atLarge {
+					padding: 7px 0;
 				}
 				&:hover {
 					color: $fade-green;
