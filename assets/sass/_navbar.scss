@@ -26,6 +26,9 @@
 		font-size: 18px;
 		white-space: none;
 		width: 60px;
+		@include atLarge {
+			padding: 8px 0;
+		}
 		& .big {
 			font-size: 40px;
 		}
