@@ -1,6 +1,5 @@
 <template>
   <div class="OLAKUNLE BOYE">
-  	<navbar />
     <div class="container">
     	<nuxt />
     </div>
