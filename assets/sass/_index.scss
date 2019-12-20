@@ -1,0 +1,27 @@
+.home-page {
+	& .content {
+		width: 85%;
+		left: 5%;
+		min-height: 0;
+		top: 50%;
+		position: static;
+		margin-top: 170px;
+		margin-left: 10%;
+	}
+	& h1 {
+		margin: 0;
+		font-family: font-file-82132;
+		font-weight: 400;
+		color: $color3;
+		& img {
+			position: relative;
+			top: 2px;
+			width: 32px;
+			height: auto;
+		}
+	}
+	& .blast {
+		transition: all .3s ease-out;
+		display: inline-block;
+	}
+}
