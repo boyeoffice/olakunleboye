@@ -13,6 +13,9 @@
       background: #313537;;
       display: block;
       color: #fff;
+      @include lg {
+        margin-right: 0;
+      }
       & img {
           display: block;
           margin: 5px 15px;
@@ -25,11 +28,13 @@
     }
   & .toggle {
       font-size: 30px;
-      color:
-      #fff;
+      color: #fff;
       float: right;
       margin: 10px 20px 10px 10px;
       display: block;
+      @include md {
+        display: none;
+      }
   }
   &  nav {
       width: 100%;
@@ -45,6 +50,25 @@
       margin-top: 0;
       background: $color5;
       transition: all .3s ease-out;
+      @include md {
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 50%;
+        margin-left: -19%;
+        width: 42%;
+        text-align: center;
+        overflow: hidden;
+      }
+      @include lg {
+        top: 50%;
+        height: 210px;
+        width: 100%;
+        margin-top: -120px;
+        left: 0;
+        margin-left: 0;
+      }
       &.show {
           opacity: 1;
           left: 0;
@@ -61,7 +85,62 @@
           &.active, :hover {
             color: $color1;
           }
+          @include lg {
+            height: 51px;
+            line-height: 51px;
+            float: none;
+            width: auto;
+          }
 
         }
+    }
+    & ul {
+      display: none;
+      @include md {
+        position: static;
+        bottom: 20px;
+        width: auto;
+        height: 60px;
+        line-height: 60px;
+        display: block;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+        margin: 0;
+        float: right;
+      }
+      @include lg {
+        position: absolute;
+        height: auto;
+        width: 100%;
+      }
+      & li {
+          @include md {
+            float: right;
+            height: 60px;
+            line-height: 60px;
+            margin: 0 10px;
+            & a {
+              line-height: normal;
+              padding: 0;
+              &:hover {
+                color: $color1;
+              }
+              }
+          }
+          @include lg {
+            line-height: 30px;
+            height: 30px;
+            margin: auto;
+            float: none;
+          }
+        }
+    }
+    @include lg {
+      position: absolute;
+      top: 0;
+      min-height: 530px;
+      width: 60px;
+      height: 100%;
     }
 }
