@@ -16,7 +16,7 @@ html {
   margin: 0;
 }
 a {
-  color:#444;
+  color: $color3;
   text-decoration: none;
 }
 a:focus {
@@ -32,7 +32,7 @@ a:focus {
   letter-spacing: 1px;
 }
 body {
-	background: $dark;
+	background: #fff;
   overflow: hidden;
   display: block;
 }

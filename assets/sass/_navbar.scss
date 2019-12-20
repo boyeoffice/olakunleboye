@@ -2,15 +2,26 @@
   position: fixed;
   height: 60px;
   overflow: hidden;
-  background: $black-1;
+  background: $color5;
   width: 100%;
+  min-height: 0;
+  z-index: 3;
   & .logo {
       float: left;
       padding: 2px 0;
       margin-right: 20px;
-      background: $black;
+      background: #313537;;
       display: block;
       color: #fff;
+      & img {
+          display: block;
+          margin: 5px 15px;
+          width: auto;
+          height: auto;
+          &:first-child {
+            height: 30px;
+          }
+        }
     }
   & .toggle {
       font-size: 30px;
@@ -20,4 +31,37 @@
       margin: 10px 20px 10px 10px;
       display: block;
   }
+  &  nav {
+      width: 100%;
+      position: fixed;
+      left: 100%;
+      opacity: 0;
+      margin-left: 0;
+      float: left;
+      overflow: hidden;
+      text-align: center;
+      height: 60px;
+      top: 60px;
+      margin-top: 0;
+      background: $color5;
+      transition: all .3s ease-out;
+      &.show {
+          opacity: 1;
+          left: 0;
+        }
+      & a {
+          float: left;
+          margin-left: 0 !important;
+          line-height: 60px;
+          height: 60px;
+          width: 20%;
+          font-size: 22px;
+          display: block;
+          position: relative;
+          &.active, :hover {
+            color: $color1;
+          }
+
+        }
+    }
 }
