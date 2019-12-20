@@ -1,23 +1,16 @@
 <template>
 	<div class="navbar">
-		<nuxt-link class="brand" to="/" rel="index">
-			<span class="big">O</span><span class="small">B</span>
+		<nuxt-link to='/' class="logo">
+		<div class="big">
+			b
+		</div>
+		<div class="small">
+			boye
+		</div>
 		</nuxt-link>
-		<nav>
-			<nuxt-link to="/" rel="index">
-				<i class="icon-hom"></i>
-			</nuxt-link>
-		</nav>
-		<ul>
-				<li v-for="link in social">
-					<a target="_blank" :href="link.url">
-						<i :class="link.icon"></i>
-					</a>
-				</li>
-			</ul>
-			<a href="javascript:void" class="toggle">
-				<i class="fa fa-bars"></i>
-			</a>
+		<a class="toggle" href="javascript:void(0)">
+			<i class="fa fa-bars"></i>
+		</a>
 	</div>
 </template>
 

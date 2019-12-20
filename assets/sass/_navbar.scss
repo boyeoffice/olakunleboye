@@ -1,0 +1,23 @@
+.navbar {
+  position: fixed;
+  height: 60px;
+  overflow: hidden;
+  background: $black-1;
+  width: 100%;
+  & .logo {
+      float: left;
+      padding: 2px 0;
+      margin-right: 20px;
+      background: $black;
+      display: block;
+      color: #fff;
+    }
+  & .toggle {
+      font-size: 30px;
+      color:
+      #fff;
+      float: right;
+      margin: 10px 20px 10px 10px;
+      display: block;
+  }
+}
