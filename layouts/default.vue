@@ -1,5 +1,6 @@
 <template>
   <div class="OLAKUNLE BOYE">
+    <navbar />
     <div class="container">
     	<nuxt />
     </div>
@@ -11,6 +12,6 @@
 	export default {
 		components: {
 			Navbar
-		}
+		 }
 	}
 </script>

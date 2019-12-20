@@ -1,20 +1,33 @@
 <template>
-  <div class="container-inner index">
-	<div class="wrapper">
-		<h1>
-			<span>H</span><span>i</span><span>,</span>
-			<br />
-			<span>I</span><span>’</span><span>m</span>
-			<span>B</span><span>o</span><span>y</span><span>e</span><span>,</span>
-			<br />
-			<span>w</span><span>e</span><span>b</span>
-			<span>d</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span><span>.</span>
-		</h1>
-	</div>
+  <div class="container">
+  <!--  <p>Hello {{ name }}!</p>
+    <NuxtLink to="/about">
+      Go to /about
+    </NuxtLink>-->
   </div>
 </template>
+
 <script>
+import Loading from '~/components/Loading'
 export default {
+  components: {
+    Loading
+  },
+  asyncData () {
+    return new Promise((resolve) => {
+      setTimeout(function () {
+        resolve({ name: 'world' })
+      }, 1000)
+    })
+  },
+
 }
 </script>
 
+<style scoped>
+.container {
+  font-size: 20px;
+  text-align: center;
+  padding-top: 100px;
+}
+</style>
