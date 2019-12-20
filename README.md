@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/bf70f9d3-441f-42dc-b77f-f825da34aa01/deploy-status)](https://app.netlify.com/sites/olakunleboye/deploys)
+
 # olakunleboye-nuxt
 
 > My personal website built with nuxtJS
