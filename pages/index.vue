@@ -1,9 +1,14 @@
 <template>
-  <div class="container">
-  <!--  <p>Hello {{ name }}!</p>
-    <NuxtLink to="/about">
-      Go to /about
-    </NuxtLink>-->
+  <div class="container home-page">
+    <div class="content">
+      <h1 class="blast-root">
+        <span v-for="(text, index) in first" class="blast">{{text}}</span><br/>
+        <span v-for="(text, index) in second" class="blast">{{text}}</span>
+        <img src="/img/logo.png" alt="" class="amination-logo"><span v-for="(text, index) in third" class="blast">{{text}}</span><br/>
+        <span v-for="(text, index) in fourth" class="blast">{{text}}</span>
+        <span v-for="(text, index) in fifth" class="blast">{{text}}</span>
+      </h1>
+    </div>
   </div>
 </template>
 
@@ -20,14 +25,13 @@ export default {
       }, 1000)
     })
   },
+  data: () => ({
+    first: ['H', 'i', ','],
+    second: ['I', '’', 'm'],
+    third: ['o','y','e', ','],
+    fourth: ['w','e','b'],
+    fifth: ['d','e','v','e','l','o','p','e','r', '.']
+  })
 
 }
 </script>
-
-<style scoped>
-.container {
-  font-size: 20px;
-  text-align: center;
-  padding-top: 100px;
-}
-</style>
