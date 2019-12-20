@@ -1,7 +1,7 @@
 <template>
-  <div class="OLAKUNLE BOYE">
+  <div class="OLAKUNLE">
     <navbar />
-    <div class="container">
+    <div class="BOYE">
     	<nuxt />
     </div>
   </div>
