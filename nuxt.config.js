@@ -5,7 +5,7 @@ export default {
   ** Headers of the page
   */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Olakunle Boye | Full Stack Developer',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,6 +15,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oswald&display=swap' },
       {rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'},
+      {rel: 'stylesheet', href: './css/animate.css'}
     ]
   },
   /*
@@ -64,5 +65,6 @@ export default {
   router: {
     linkActiveClass: 'active-link',
     linkExactActiveClass: 'active'
-  }
+  },
+  transition: 'slide-fade'
 }

@@ -82,7 +82,44 @@
           font-size: 22px;
           display: block;
           position: relative;
-          &.active, :hover {
+          &:first-child {
+            & + a::after {
+              content: "ABOUT";
+            }
+            & + a + a:after {
+              content: "SKILLS";
+            }
+            & + a + a + a:after {
+              content: "MY WORK";
+            }
+            &::after {
+              content: "HOME";
+            }
+          }
+          &::after {
+            content: "";
+            font-size: 9px;
+            letter-spacing: 2px;
+            position: absolute;
+            bottom: 0;
+            display: block;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transition: all .3s ease-out;
+          }
+          &:hover {
+            & i {
+              opacity: 0;
+            }
+            &::after {
+              opacity: 1;
+            }
+          }
+          &.active,:hover {
+            color: $color1;
+          }
+          &:hover {
             color: $color1;
           }
           @include lg {

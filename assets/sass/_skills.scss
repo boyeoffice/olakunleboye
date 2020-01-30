@@ -1,0 +1,28 @@
+.skills {
+  & .content {
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    display: table-cell;
+    max-height: 90%;
+    width: 80%;
+    @include md {
+      width: 30%;
+    }
+    & h1 {
+      color: $color3;
+      margin-bottom: 40px;
+      & .blast {
+        will-change: transform;
+        transition: all .3s ease-out;
+        display: inline-block;
+      }
+    }
+    & p {
+      color: $color3;
+      font-family: "Open Sans",sans-serif;
+      font-weight: 300;
+    }
+  }
+}
