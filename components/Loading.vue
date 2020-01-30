@@ -1,15 +1,11 @@
 <template lang="html">
-  <div class="preloader">
+  <div v-if="loading" class="preloader">
     <div class="inner">
-      <h4>OB</h4>
+      <img src="/img/logo.png" alt="Olakunle Boye">
       <span>Ola is thinkin</span>
-      <div class="progress">
-        <div class="progress-bar"
-             role="progressbar"
-             aria-valuenow=""
-             aria-valuemin="0"
-             aria-valuemax="100"
-             :style="{width: loadingIndicator + '%'}">
+      <div class="progress-bar">
+        <div class="progress-bar_bg">
+          <div style="width: 50%;"></div>
         </div>
       </div>
     </div>
@@ -19,31 +15,27 @@
 <script>
 export default {
   data: () => ({
+    loading: false
   }),
   mounted(){
     //setInterval(this.isLoading, 100);
   },
   methods: {
+    start() {
+      this.loading = true
+    },
+    finish() {
+      this.loading = false
+    }
   },
   computed: {
     loadingIndicator() {
-      return this.$root.$loading.get()
+      //return this.$root.$loading.get()
     }
   }
 }
 </script>
 
 <style scoped>
-.loading-page {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding-top: 200px;
-  font-size: 30px;
-  font-family: sans-serif;
-}
+  
 </style>

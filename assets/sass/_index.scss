@@ -10,9 +10,6 @@
 	}
 	& h1 {
 		margin: 0;
-		font-family: font-file-82132;
-		font-weight: 400;
-		color: $color3;
 		& img {
 			position: relative;
 			top: 2px;
@@ -23,5 +20,39 @@
 	& .blast {
 		transition: all .3s ease-out;
 		display: inline-block;
+	}
+	h2 {
+		color: #ddd;
+		margin-top: 20px;
+		font-weight: 400;
+		font-size: 11px;
+		font-family: "Open Sans",sans-serif;
+		letter-spacing: 3px;
+		animation: myanim2 1s 1.8s backwards;
+	}
+	.flat-button {
+		color: $color1;
+		font-size: 13px;
+		letter-spacing: 4px;
+		font-family: "Open Sans",sans-serif;
+		text-decoration: none;
+		padding: 10px 18px;
+		border: 1px solid $color1;
+		margin-top: 25px;
+		float: left;
+		animation: myanim2 1s 1.8s backwards;
+		&:hover {
+			background: $color1;
+			color: #333;
+		}
+	}
+}
+
+@keyframes myanim2 {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
 	}
 }
