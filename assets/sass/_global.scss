@@ -62,8 +62,11 @@ h1 {
 }
 body {
 	background: $color2;
-  overflow: hidden;
+  overflow-x: auto;
   display: block;
+  @include md {
+    overflow: hidden;
+  }
 }
 .blast:hover {
   color: $color1;
@@ -79,10 +82,10 @@ body {
     position: relative;
     margin: 0 auto;
     box-sizing: border-box;
-    min-height: 530px;
+    min-height: 533px;
     top: 5%;
     transform-style: preserve-3d;
-    overflow: hidden;
+    //overflow: hidden;
     z-index: 1;
   }
 }
