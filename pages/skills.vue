@@ -24,6 +24,9 @@
 <script>
   import BlastRoot from '~/components/BlastRoot'
   export default {
+    head: {
+      title: 'Skills & Experience | Full Stack Developer'
+    },
     components: {
       BlastRoot
     },
