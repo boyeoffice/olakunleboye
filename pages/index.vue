@@ -13,6 +13,9 @@
       </h2>
       <nuxt-link class="flat-button animated rubberBand" to="/contact">CONTACT ME</nuxt-link>
     </div>
+    <div class="_ff748">
+      <img src="/img/PicsArt_1435780508022.jpg" alt="Olakunle Boye">
+    </div>
   </div>
 </template>
 

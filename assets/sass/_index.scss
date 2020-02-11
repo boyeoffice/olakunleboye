@@ -30,7 +30,7 @@
 		letter-spacing: 3px;
 		animation: myanim2 1s 1.8s backwards;
 	}
-	.flat-button {
+	& .flat-button {
 		color: $color1;
 		font-size: 13px;
 		letter-spacing: 4px;
@@ -44,6 +44,19 @@
 		&:hover {
 			background: $color1;
 			color: #333;
+		}
+	}
+	& ._ff748 {
+		position: absolute;
+		display: none;
+		@include lg {display: block;}
+		width: 200px;
+		top: 0;
+		right: 50%;
+		transform: translateX(100%);
+		& img {
+			display: block;
+			animation: myanim2 1.5s 1.9s backwards;
 		}
 	}
 }

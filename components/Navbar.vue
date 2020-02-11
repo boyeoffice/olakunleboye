@@ -10,7 +10,7 @@
 			</nuxt-link>
 		</nav>
 		<ul>
-			<li v-for="link in social">
+			<li v-for="(link, index) in social" :key="index">
 				<a :href="link.url"> <i :class="link.icon"></i> </a>
 			</li>
 		</ul>
