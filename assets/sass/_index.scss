@@ -12,8 +12,9 @@
 		margin: 0;
 		& img {
 			position: relative;
-			top: 2px;
-			width: 32px;
+			top: -4px;
+			right: -7px;
+			width: 51px;
 			height: auto;
 		}
 	}
@@ -58,6 +59,22 @@
 			display: block;
 			animation: myanim2 1.5s 1.9s backwards;
 		}
+	}
+}
+.pic-bg {
+	position: absolute;
+	top: 0;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	right: 0;
+	opacity: 0.5;
+	animation: myanim2 1.5s 1.9s backwards;
+	@include lg {
+		width: 50%;
+		opacity: 1;
 	}
 }
 

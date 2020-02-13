@@ -1,8 +1,8 @@
 <template>
 	<div class="navbar">
 		<nuxt-link to='/' class="logo">
-		<img src="/img/logo.png" alt="Olakunle Boye">
-		<img src="/img/logo_sub.png" alt="Olakunle Boye" style="width: 27px;">
+		<img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">
+		<img src="/img/349168519845770.png" alt="Olakunle Boye" style="width: 27px;">
 		</nuxt-link>
 		<nav :class="{'en': true, 'show': show}">
 			<nuxt-link :rel="link.name" :to="link.url" v-for="(link, index) in links" :key="index">

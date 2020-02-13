@@ -1,10 +1,11 @@
 <template>
-  <div class="container home-page">
+  <div>
+    <div class="container home-page">
     <div class="content">
       <h1 class="blast-root">
         <blast-root :content="first" /><br/>
         <blast-root :content="second" />
-        <img src="/img/logo.png" alt="" class="animation-logo"><blast-root :content="third" style="opacity: 1;" /><br/>
+        <img src="/img/cooltext349167867806161.png" alt="" class="animation-logo"><blast-root :content="third" style="opacity: 1;" /><br/>
         <blast-root :content="fourth" />
         <blast-root :content="fifth" />
       </h1>
@@ -13,9 +14,8 @@
       </h2>
       <nuxt-link class="flat-button animated rubberBand" to="/contact">CONTACT ME</nuxt-link>
     </div>
-    <div class="_ff748">
-      <img src="/img/PicsArt_1435780508022.jpg" alt="Olakunle Boye">
-    </div>
+  </div>
+  <div class="pic-bg" :style="{backgroundImage: 'url(' + avatar + ')'}"></div>
   </div>
 </template>
 
@@ -32,7 +32,7 @@ export default {
     return new Promise((resolve) => {
       setTimeout(function () {
         //this.$nuxt.$loading.finish()
-        resolve({ name: 'world' })
+        resolve({ avatar: '/img/PicsArt_1435780508022.jpg' })
       }, 1000)
     })
   },
