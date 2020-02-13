@@ -6,7 +6,15 @@
         <blast-root :content="me" />
       </h1>
       <p class="LEFT">
-        Professionally connected with the web development industry and information technology for many years.
+        A self taught programmer who have passion for writing code that solve problems.
+      </p>
+      <p class="LEFT">
+        Well-organised person, problem solver, remote developer with high to attention to detail.
+        Professionally worked with quiet number of clients both in Nigeria and abroad.
+      </p>
+      <p class="LEFT">
+        I love exploring new technologies and often amazed by the progress we as a human species have made so far in the recent years.
+         Also love watching SCI-FI movies.
       </p>
       <img src="/img/timeline.png" style="max-width: 95%; margin-top: 40px;" alt="">
       <div class="clear"></div>
@@ -25,7 +33,14 @@ import BlastRoot from '~/components/BlastRoot'
 export default {
   loading: false,
   head: {
-    title: 'About me | Full Stack developer'
+    title: 'About me | Full Stack developer',
+    meta: [
+      {property: "og:url", content: "http://olakunleboye.com/about/"},
+      {name: "twitter:title", content: "About me | Fullstack Developer | WordPress Expert - Freelancer" },
+    ],
+    link: [
+      {rel: "canonical", url: "http//olakunleboye.com"}
+    ]
   },
   components: {
     BlastRoot

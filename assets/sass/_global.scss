@@ -16,9 +16,16 @@ html {
   text-rendering: optimizeLegibility;
   margin: 0;
 }
+.content {
+  margin-top: 100px;
+  @include lg {
+    margin-top: 0;
+  }
+}
 p {
   font-size: 14px;
   line-height: 20px;
+  margin: 10px 0;
 }
 canvas {
   display: inline-block;
