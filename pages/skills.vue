@@ -6,8 +6,18 @@
         <blast-root :content="and" /><br />
         <blast-root :content="exp" />
       </h1>
-      <p>
-        Professionally connected with the web development industry and information technology for many years.
+      <p class="LEFT">
+        I have over three years of experience in software engineering(frontend,backend and devsop).
+      </p>
+      <p class="LEFT">
+        ReactJS, VueJS, NuxtJS, building small and medium web applications with CSS, features, lazyload image,
+        animations
+      </p>
+      <p class="LEFT">
+        I also have full-stack developer experience with Laravel, NodeJS and opensource CMS like wordpress.
+      </p>
+      <p class="LEFT">
+        Visit my <a href="https://www.fiverr.com/devboye" target="_blank">FIVERR</a> profile for more details or just <nuxt-link to="/contact"> contact </nuxt-link> me
       </p>
     </div>
     <div class="clear"></div>

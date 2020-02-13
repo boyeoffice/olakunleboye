@@ -7,7 +7,7 @@
     display: table-cell;
     max-height: 90%;
     width: 80%;
-    @include md {
+    @include lg {
       width: 30%;
     }
     & h1 {
@@ -23,6 +23,9 @@
       color: $color3;
       font-family: "Open Sans",sans-serif;
       font-weight: 300;
+      a {
+        color: $color1;
+      }
     }
   }
 }

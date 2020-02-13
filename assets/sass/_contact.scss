@@ -7,7 +7,7 @@
     display: table-cell;
     max-height: 90%;
     width: 80%;
-    @include md {
+    @include lg {
       width: 30%;
     }
     & h1 {
