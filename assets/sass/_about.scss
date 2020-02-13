@@ -8,11 +8,11 @@
     max-height: 90%;
     width: 80%;
     & img {
-      @include md {
+      @include lg {
         display: none;
       }
     }
-    @include md {
+    @include lg {
       width: 40%;
     }
     & h1 {
@@ -33,7 +33,7 @@
 }
 #pyramid {
   display: none;
-  @include md {
+  @include lg {
     display: block;
   }
   position: absolute;
