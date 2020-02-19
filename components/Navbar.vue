@@ -11,7 +11,7 @@
 		</nav>
 		<ul>
 			<li v-for="(link, index) in social" :key="index">
-				<a :href="link.url"> <i :class="link.icon"></i> </a>
+				<a target="_blank" :href="link.url"> <i :class="link.icon"></i> </a>
 			</li>
 		</ul>
 		<a @click="show = !show" class="toggle" href="javascript:void(0)">
@@ -27,8 +27,8 @@
 			social: [
 			{name: 'Twitter', url: 'https://www.twitter.com/dev_boye', icon: 'fa fa-twitter'},
 			{name: 'Github', url: 'https://www.github.com/boyeoffice', icon: 'fa fa-github'},
-			{name: 'LinkedIn', url: 'https//linkedin.com/in/devboye', icon: 'fa fa-linkedin'},
-			{name: 'Instagram', url: 'https//instagram.com/in/devboye', icon: 'fa fa-instagram'}
+			{name: 'LinkedIn', url: 'https://linkedin.com/in/devboye', icon: 'fa fa-linkedin'},
+			{name: 'Instagram', url: 'https://instagram.com/in/devboye', icon: 'fa fa-instagram'}
 		],
 			links: [
 				{name: 'home', url: '/', icon: 'icon-hom'},

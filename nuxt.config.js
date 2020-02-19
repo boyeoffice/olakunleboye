@@ -15,6 +15,8 @@ export default {
       {name:"twitter:site", content: "@dev_boye"},
       {name:"twitter:creator", content: "@dev_boye"},
       {name: "twitter:card", content: "summary"},
+      {name: "twitter:tittle", content: "Contact | Full Stack Developer"},
+      {name: "twitter:description", content: "Hire Professional Full Stack Developer &amp; WordPress Expert - stunning animations, hi-end solutions, interactivity &amp; amazing web experience."},
       {name: 'msapplication-TileColor', content: '#ffffff' },
       { name: 'msapplication-TileImage', content: '/icon/ms-icon-144x144.png' },
       { name: 'theme-color', content: '#ffffff' }
