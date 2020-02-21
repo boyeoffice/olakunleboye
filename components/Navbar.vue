@@ -1,23 +1,32 @@
 <template>
-	<div class="navbar">
-		<nuxt-link to='/' class="logo">
-		<img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">
-		<img src="/img/349168519845770.png" alt="Olakunle Boye" style="width: 27px;">
-		</nuxt-link>
-		<nav :class="{'en': true, 'show': show}">
-			<nuxt-link :rel="link.name" :to="link.url" v-for="(link, index) in links" :key="index">
-				<i :class="link.icon"></i>
-			</nuxt-link>
-		</nav>
-		<ul>
-			<li v-for="(link, index) in social" :key="index">
-				<a target="_blank" :href="link.url"> <i :class="link.icon"></i> </a>
-			</li>
-		</ul>
-		<a @click="show = !show" class="toggle" href="javascript:void(0)">
-			<i class="fa fa-bars"></i>
-		</a>
-	</div>
+  <div class="OLAKUNLE">
+  <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
+    <b-navbar-brand href="#">
+      <img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">
+  		<img src="/img/349168519845770.png" alt="Olakunle Boye" style="width: 27px;">
+    </b-navbar-brand>
+
+    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+
+    <b-collapse id="nav-collapse" is-nav>
+      <b-navbar-nav align="right" class="ml-auto" id="nav">
+        <b-nav-item v-for="(link, index) in links" :key="index" :to="link.url">
+          <i :class="link.icon"></i>
+        </b-nav-item>
+      </b-navbar-nav>
+
+      <!-- Right aligned nav items -->
+      <b-navbar-nav class="ml-auto">
+
+        <b-navbar-nav>
+          <b-nav-item v-for="(link, index) in social" :key="index" :href="link.url" target="_blank">
+            <i :class="link.icon"></i>
+          </b-nav-item>
+        </b-navbar-nav>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+</div>
 </template>
 
 <script>

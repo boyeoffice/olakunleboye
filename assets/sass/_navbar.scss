@@ -1,186 +1,43 @@
 .navbar {
-  position: fixed;
-  height: 60px;
-  overflow: hidden;
-  background: $color5;
+  padding: 0;
+  height: 3.75rem;
   width: 100%;
-  min-height: 0;
-  z-index: 3;
-  & .logo {
-      float: left;
-      padding: 2px 0;
-      margin-right: 20px;
-      background: #313537;;
+  &-brand {
+    background: #313537;
+    height: 100%;
+    & img {
       display: block;
-      color: #fff;
-      @include lg {
-        margin-right: 0;
+      margin: 5px 15px;
+      width: auto;
+      height: auto;
+      &:first-child {
+        height: 1.857rem;
       }
-      & img {
-          display: block;
-          margin: 5px 15px;
-          width: auto;
-          height: auto;
-          &:first-child {
-            height: 30px;
-          }
-        }
     }
-  & .toggle {
-      font-size: 30px;
-      color: #fff;
-      float: right;
-      margin: 10px 20px 10px 10px;
-      display: block;
-      @include md {
-        display: none;
-      }
   }
-  &  nav {
-      width: 100%;
-      position: fixed;
-      left: 100%;
-      opacity: 0;
-      margin-left: 0;
-      float: left;
-      overflow: hidden;
-      text-align: center;
-      height: 60px;
-      top: 60px;
-      margin-top: 0;
-      background: $color5;
-      transition: all .3s ease-out;
-      @include md {
-        opacity: 1;
-        position: absolute;
-        display: block;
-        top: 0;
-        left: 50%;
-        margin-left: -19%;
-        width: 42%;
-        text-align: center;
-        overflow: hidden;
-      }
-      @include lg {
-        top: 50%;
-        height: 250px;
-        width: 100%;
-        margin-top: -120px;
-        left: 0;
-        margin-left: 0;
-      }
-      &.show {
-          opacity: 1;
-          left: 0;
-        }
-      & a {
-          float: left;
-          margin-left: 0 !important;
-          line-height: 60px;
-          height: 60px;
-          width: 20%;
-          font-size: 22px;
-          display: block;
-          position: relative;
-          &:first-child {
-            & + a::after {
-              content: "ABOUT";
-            }
-            & + a + a:after {
-              content: "SKILLS";
-            }
-            & + a + a + a:after {
-              content: "MY WORK";
-            }
-            & + a + a + a + a:after {
-              content: "CONTACT";
-            }
-            &::after {
-              content: "HOME";
-            }
-          }
-          &::after {
-            content: "";
-            font-size: 9px;
-            letter-spacing: 2px;
-            position: absolute;
-            bottom: 0;
-            display: block;
-            width: 100%;
-            text-align: center;
-            opacity: 0;
-            transition: all .3s ease-out;
-          }
-          &:hover {
-            & i {
-              opacity: 0;
-            }
-            &::after {
-              opacity: 1;
-            }
-          }
-          &.active,:hover {
-            color: $color1;
-          }
-          &:hover {
-            color: $color1;
-          }
-          @include lg {
-            height: 51px;
-            line-height: 51px;
-            float: none;
-            width: auto;
-          }
-
-        }
-    }
-    & ul {
+  &-toggler {
+    @include md {
       display: none;
-      @include md {
-        position: static;
-        bottom: 20px;
-        width: auto;
-        height: 60px;
-        line-height: 60px;
-        display: block;
-        padding: 0;
-        list-style: none;
-        text-align: center;
-        margin: 0;
-        float: right;
-      }
-      @include lg {
-        position: absolute;
-        height: auto;
-        width: 100%;
-      }
-      & li {
-          @include md {
-            float: right;
-            height: 60px;
-            line-height: 60px;
-            margin: 0 10px;
-            & a {
-              line-height: normal;
-              padding: 0;
-              &:hover {
-                color: $color1;
-              }
-              }
-          }
-          @include lg {
-            line-height: 30px;
-            height: 30px;
-            margin: auto;
-            float: none;
-          }
-        }
     }
-    @include lg {
-      position: absolute;
-      top: 0;
-      min-height: 530px;
-      width: 60px;
-      height: 100%;
+  }
+  &-collapse {
+    display: flex !important;
+    height: 100%;
+  }
+}
+
+#nav {
+  height: 100%;
+  & li {
+    height: 100%;
+    position: relative;
+    & a {
+      height: 3.75rem;
+      font-size: 1.375rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 4rem;
     }
+  }
 }
