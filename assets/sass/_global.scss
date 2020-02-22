@@ -4,15 +4,10 @@ body {
 img {
   max-width: 100%;
 }
+a.active, a:hover {
+  color: $color1 !important;
+}
 a:focus {
   outline: none;
-}
-._yr9s {
-  display: none;
-  @include md {
-    display: flex;
-  }
-}
-.ml-auto {
-  margin-left: 0;
+  color: $color1 !important;
 }

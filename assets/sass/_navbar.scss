@@ -76,6 +76,23 @@
       height: 51px;
       align-items: center;
       display: flex;
+      &:first-child {
+        & + li a::after {
+          content: "ABOUT";
+        }
+        & + li + li a::after {
+          content: "SKILLS";
+        }
+        & + li + li + li a::after {
+          content: "MY WORK";
+        }
+        & + li + li + li + li a::after {
+          content: "CONTACT";
+        }
+        & a::after {
+          content: "HOME";
+        }
+      }
     }
     & a {
       height: 3.75rem;
@@ -84,6 +101,23 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      &::after {
+        content: "";
+        font-size: 9px;
+        letter-spacing: 2px;
+        position: absolute;
+        display: block;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: all .3s ease-out;
+      }
+      &:hover i {
+        opacity: 0;
+      }
+      &:hover::after {
+        opacity: 1;
+      }
     }
   }
 }

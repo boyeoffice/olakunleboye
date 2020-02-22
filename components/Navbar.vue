@@ -1,7 +1,7 @@
 <template>
   <div class="OLAKUNLE">
   <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
-    <b-navbar-brand href="#">
+    <b-navbar-brand to="/" no-prefetch="true">
       <img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">
   		<img src="/img/349168519845770.png" alt="Olakunle Boye" style="width: 27px;">
     </b-navbar-brand>
@@ -17,7 +17,7 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto _yr9s">
-          <b-nav-item v-for="(link, index) in social" :key="index" :href="link.url" target="_blank">
+          <b-nav-item no-prefetch="true" v-for="(link, index) in social" :key="index" :href="link.url" target="_blank">
             <i :class="link.icon"></i>
           </b-nav-item>
       </b-navbar-nav>
