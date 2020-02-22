@@ -8,21 +8,18 @@
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" is-nav>
-      <b-navbar-nav align="right" class="ml-auto" id="nav">
+    <b-collapse id="nav-collapse" class="bg-dark" is-nav>
+      <b-navbar-nav class="ml-md-auto" id="nav">
         <b-nav-item v-for="(link, index) in links" :key="index" :to="link.url">
           <i :class="link.icon"></i>
         </b-nav-item>
       </b-navbar-nav>
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
-
-        <b-navbar-nav>
+      <b-navbar-nav class="ml-auto _yr9s">
           <b-nav-item v-for="(link, index) in social" :key="index" :href="link.url" target="_blank">
             <i :class="link.icon"></i>
           </b-nav-item>
-        </b-navbar-nav>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>

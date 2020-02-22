@@ -7,3 +7,12 @@ img {
 a:focus {
   outline: none;
 }
+._yr9s {
+  display: none;
+  @include md {
+    display: flex;
+  }
+}
+.ml-auto {
+  margin-left: 0;
+}
