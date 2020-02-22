@@ -113,10 +113,14 @@
         transition: all .3s ease-out;
       }
       &:hover i {
-        opacity: 0;
+        @include lg {
+          opacity: 0;
+        }
       }
       &:hover::after {
-        opacity: 1;
+        @include lg {
+          opacity: 1;
+        }
       }
     }
   }
