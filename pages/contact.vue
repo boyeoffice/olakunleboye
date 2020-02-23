@@ -8,20 +8,20 @@
       <p></p>
       <div class="contact-form">
         <form @submit.prevent="Send" id="contact" autocomplete="off">
-          <ul><li class="half animated fadeInUp"> 
-          <input class="input__field input__field--hoshi" placeholder="Name" type="text" name="name"> 
+          <ul><li class="half animated fadeInUp">
+          <input class="input__field input__field--hoshi" placeholder="Name" type="text" name="name">
           <label class="input__label input__label--hoshi input__label--hoshi-color-2"></label></li>
-          <li class="half animated fadeInUp"> 
+          <li class="half animated fadeInUp">
           <input class="input__field input__field--hoshi" placeholder="Email" type="email" name="email">
            <label class="input__label input__label--hoshi input__label--hoshi-color-2"></label></li>
-           <li class="animated fadeInUp"> 
-           <input class="input__field input__field--hoshi" placeholder="Subject" type="text" name="subject"> 
+           <li class="animated fadeInUp">
+           <input class="input__field input__field--hoshi" placeholder="Subject" type="text" name="subject">
            <label class="input__label input__label--hoshi input__label--hoshi-color-2"></label></li>
            <li class="animated fadeInUp">
            <textarea class="input__field input__field--hoshi" placeholder="Message" name="msg"></textarea>
            <label class="input__label input__label--hoshi input__label--hoshi-color-2"></label></li>
-           <li style="display: inline-block;" class="submit animated fadeInUp"> 
-           <input type="hidden" name="ip" value=""> 
+           <li style="display: inline-block;" class="submit animated fadeInUp">
+           <input type="hidden" name="ip" value="">
            <input id="submit" type="submit" class="flat-button" value="HIT ME"></li>
            <li class=" animated fadeInUp" style="float: right; color: #fff; margin-top: 5px;">or <a style="color: #fff; text-decoration: underline;" href="mailto:kunlexzy@gmail.com"> send me an email </a>instead.</li>
            </ul>
@@ -42,6 +42,14 @@
       return {
         contact: ['C','o','n','t','a','c','t']
       }
+    },
+    created() {
+      //do something after mounting vue instance
+      this.$nextTick(() => {
+        this.$nuxt.$loading.start()
+
+        setTimeout(() => this.$nuxt.$loading.finish(), 5000)
+      })
     },
     methods: {
       Send(){

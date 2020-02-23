@@ -1,5 +1,6 @@
 <template>
-  <div class="container about">
+  <div>
+  <div v-if="show" class="container about">
     <div class="content">
       <h1 class="blast-root" aria-label=" About me ">
         <blast-root :content="about" />
@@ -26,10 +27,12 @@
       <div></div>
     </section>
   </div>
+</div>
 </template>
 
 <script>
 import BlastRoot from '~/components/BlastRoot'
+import Loading from '~/components/Loading'
 export default {
   loading: false,
   head: {
@@ -43,27 +46,25 @@ export default {
     ]
   },
   components: {
-    BlastRoot
+    BlastRoot,
+    Loading
   },
   data() {
     return {
       about: ['A','b','o','u','t'],
-      me: ['m','e']
+      me: ['m','e'],
+      show: false
     }
   },
-  asyncData () {
-    return new Promise((resolve) => {
-      setTimeout(function () {
-       // this.$nuxt.$loading.finish()
-        resolve({})
-      }, 1000)
+  created () {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+
+      setTimeout(() => {
+        this.$nuxt.$loading.finish()
+        this.show = true
+      }, 5000)
     })
-  },
-  mounted () {
-    setTimeout(() => {
-      // Extend loader for an additional 5s
-      this.$nuxt.$loading.finish()
-    }, 1000)
   },
   methods: {
    /* goToFinal () {
