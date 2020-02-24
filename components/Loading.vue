@@ -1,6 +1,5 @@
 <template lang="html">
-  <transition name="fade">
-  <div v-if="show" class="preloader bg-dark">
+  <div v-show="show" class="preloader bg-dark">
     <div class="inner">
       <img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">
   		<img src="/img/349168519845770.png" alt="Olakunle Boye" style="width: 27px;">
@@ -8,7 +7,6 @@
       <b-progress variant="secondary" height="2px" :value="percent"></b-progress>
     </div>
   </div>
-</transition>
 </template>
 
 <script>

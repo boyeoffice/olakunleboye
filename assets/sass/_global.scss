@@ -1,6 +1,11 @@
 body {
   background: $color2;
 }
+*,
+*:before,
+*:after {
+  text-rendering: optimizeLegibility;
+}
 img {
   max-width: 100%;
 }
@@ -10,6 +15,23 @@ a.active, a:hover {
 a:focus {
   outline: none;
   color: $color1 !important;
+}
+h1 {
+  font-size: 47px;
+  line-height: 40px;
+  @include md {
+    font-size: 60px;
+    line-height: 53px;
+  }
+  font-family: font-file-82132;
+  font-weight: 400;
+  color: #f6f7eb;
+}
+.BOYE {
+  & .content {
+    z-index: 1;
+    transform-style: preserve-3d;
+  }
 }
 
 .fade-enter-active, .fade-leave-active {

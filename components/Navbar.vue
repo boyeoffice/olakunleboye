@@ -1,5 +1,5 @@
 <template>
-  <div class="OLAKUNLE">
+  <div class="ADEMORIN">
   <b-navbar toggleable="md" type="dark" variant="dark" fixed="top">
     <b-navbar-brand to="/" no-prefetch="true">
       <img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">

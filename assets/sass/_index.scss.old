@@ -1,26 +1,28 @@
 .home-page {
-  color: #fff;
-  & h1 {
-    margin: 0;
-    & img {
+	& .content {
+		width: 85%;
+		left: 5%;
+		min-height: 0;
+		top: 50%;
+		position: static;
+		margin-top: 170px;
+		margin-left: 10%;
+	}
+	& h1 {
+		margin: 0;
+		& img {
 			position: relative;
 			top: -4px;
 			right: -7px;
 			width: 51px;
 			height: auto;
-    }
-  }
-  .blast {
-    transition: all .3s ease-out;
-    display: inline-block;
-  }
-  & .content {
-    margin-top: 170px;
-    position: static;
-    left: 5%;
-    margin-left: 8%;
-  }
-  & h2 {
+		}
+	}
+	& .blast {
+		transition: all .3s ease-out;
+		display: inline-block;
+	}
+	h2 {
 		color: #ddd;
 		margin-top: 20px;
 		font-weight: 400;
@@ -42,11 +44,23 @@
 		animation: myanim2 1s 1.8s backwards;
 		&:hover {
 			background: $color1;
-			color: #333 !important;
+			color: #333;
+		}
+	}
+	& ._ff748 {
+		position: absolute;
+		display: none;
+		@include lg {display: block;}
+		width: 200px;
+		top: 0;
+		right: 50%;
+		transform: translateX(100%);
+		& img {
+			display: block;
+			animation: myanim2 1.5s 1.9s backwards;
 		}
 	}
 }
-
 .pic-bg {
 	position: absolute;
 	top: 0;
