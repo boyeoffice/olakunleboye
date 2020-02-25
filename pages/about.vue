@@ -1,38 +1,25 @@
-<template>
-  <div>
-  <div v-if="show" class="container about">
-    <div class="content">
-      <h1 class="blast-root" aria-label=" About me ">
-        <blast-root :content="about" />
-        <blast-root :content="me" />
-      </h1>
-      <p class="LEFT">
-        A self taught programmer who have passion for writing code that solve problems.
-      </p>
-      <p class="LEFT">
-        Well-organised person, problem solver, remote developer with high to attention to detail.
-        Professionally worked with quiet number of clients both in Nigeria and abroad.
-      </p>
-      <p class="LEFT">
-        I love exploring new technologies and often amazed by the progress we as a human species have made so far in the recent years.
-         Also love watching SCI-FI movies.
-      </p>
-      <img src="/img/timeline.png" style="max-width: 95%; margin-top: 40px;" alt="">
-      <div class="clear"></div>
-    </div>
-    <section id="pyramid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
+<template lang="html">
+  <div class="about">
+    <b-container>
+      <b-row>
+          <b-col cols="11" md="6"  class="content">
+            <h1 class="blast-root" aria-label=" About me ">
+              <blast-root :content="about" />
+              <blast-root :content="me" />
+            </h1>
+            <div class="mt-4">
+              <carousel @update-class="updateClass" :slides="content" />
+            </div>
+          </b-col>
+      </b-row>
+    </b-container>
   </div>
-</div>
 </template>
 
 <script>
 import BlastRoot from '~/components/BlastRoot'
 import Loading from '~/components/Loading'
+import Carousel from '~/components/CarouselSlideUp'
 export default {
   loading: false,
   head: {
@@ -47,16 +34,24 @@ export default {
   },
   components: {
     BlastRoot,
-    Loading
+    Loading,
+    Carousel
   },
   data() {
     return {
       about: ['A','b','o','u','t'],
       me: ['m','e'],
-      show: false
+      show: false,
+      content: [
+        {text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 0 '},
+        {text:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.1'},
+        {text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 2 '},
+        {text:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 3'}
+      ],
+      selected: 0
     }
   },
-  created () {
+  mounted () {
     this.$nextTick(() => {
       this.$nuxt.$loading.start()
 
@@ -67,14 +62,14 @@ export default {
     })
   },
   methods: {
-   /* goToFinal () {
-      // Start loader immediately
-      this.$nuxt.$loading.start()
-      // Actually change route 5s later
-      setTimeout(() => {
-        this.$router.push('/final')
-      }, 5000)
-    }*/
+    updateClass (n) {
+      if(n > 3) {
+        n = 0
+      }
+      //this.content[this.selected].transition = 'active animated bounceOut'
+      this.content[n].transition = 'animated zoomIn'
+      this.selected = n
+    }
   }
 }
 </script>

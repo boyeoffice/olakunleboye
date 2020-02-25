@@ -32,6 +32,13 @@ h1 {
   & .content {
     z-index: 1;
     transform-style: preserve-3d;
+    & .blast {
+      transition: all .3s ease-out;
+      display: inline-block;
+      &:hover {
+        color: $color1;
+      }
+    }
   }
 }
 
