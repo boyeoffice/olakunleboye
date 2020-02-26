@@ -8,23 +8,23 @@
             </h1>
             <p class="text-white">I am interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to contact me using below form either.</p>
             <div class="mt-2">
-              <b-form>
+              <b-form @submit.prevent="onSubmit">
                 <div class="form-group row">
                   <b-col>
-                    <form-input formType="text" placeHolder="Name"/>
+                    <input type="text" class="form-control b-control" v-model="form.name" placeHolder="Name"/>
                   </b-col>
                   <b-col>
-                    <form-input formType="email" placeHolder="Email"/>
+                    <input type="email" class="form-control b-control" v-model="form.email" placeHolder="Email" required/>
                   </b-col>
                 </div>
                 <div class="form-group">
-                  <form-input formType="text" placeHolder="Subject" />
+                  <input type="text" class="form-control b-control" v-model="form.subject"  placeHolder="Subject" />
                 </div>
                 <div class="form-group">
-                  <textarea rows="5" class="form-control" placeholder="Message"></textarea>
+                  <textarea rows="5" v-model="form.message" class="form-control b-control" placeholder="Message"></textarea>
                 </div>
-                <button type="button" class="btn btn-sm btn-primary">HIT ME</button>
-                <span>
+                <button type="submit" class="btn btn-sm">HIT ME</button>
+                <span class="ml-1 text-white">
                   or
                   <b-link href="mailto:kunlexzy@gmail.com">send me an email</b-link>
                 </span>
@@ -40,6 +40,7 @@
 <script>
   import BlastRoot from '~/components/BlastRoot'
   import FormInput from '~/components/FormInput'
+  import emailjs from 'emailjs-com'
   export default {
     components: {
       BlastRoot,
@@ -60,8 +61,22 @@
       })
     },
     methods: {
-      Send(){
-        alert('Email sent!')
+      onSubmit(e){
+        // console.log(e.target)
+        var template_params = {
+                    from_name: this.form.name,
+                    reply_to: this.form.email,
+                    subject: this.form.subject,
+                    message_html: this.form.message
+                    };
+        emailjs.send('gmail', 'template_Nb73pmI0', template_params, 'user_SdZ2PZgnf3ZniM3VVdfkA')
+        .then((result) => {
+          alert('Your mail is sent!');
+            //console.log('SUCCESS!', result.status, result.text);
+        }, (error) => {
+           alert('Oops... ' + JSON.stringify(error));
+            //console.log('FAILED...', error);
+        });
       }
     }
   }

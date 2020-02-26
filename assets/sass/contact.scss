@@ -11,4 +11,29 @@
     left: 5%;
     margin-left: 8%;
   }
+  & .b-control {
+    background-color: #432a44;
+    border-color: #432a44;
+    border-radius: 0;
+    &:focus {
+      box-shadow: none;
+      border-bottom: $color1 solid 1px;
+      color: #fff;
+    }
+  }
+  & button {
+    color: $color1;
+    font-size: 13px;
+    letter-spacing: 4px;
+    border: 1px solid $color1;
+    &:hover {
+      background: $color1;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+  & a {
+    color: $color1;
+  }
 }

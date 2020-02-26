@@ -1,13 +1,13 @@
 <template lang="html">
-  <input :type="formType" class="form-control" :placeholder="placeHolder">
+  <input :type="formType" :value="value" class="form-control b-control" :placeholder="placeHolder">
 </template>
 
 <script>
 export default {
   props: {
     formType: String,
-    placeHolder: String
-
+    placeHolder: String,
+    value: String
   }
 }
 </script>
