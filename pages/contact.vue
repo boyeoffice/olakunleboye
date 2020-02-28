@@ -1,8 +1,8 @@
 <template lang="html">
   <div class="contact">
-    <b-container>
+    <b-container fluid>
       <b-row>
-          <b-col cols="11" md="8" lg="6"  class="content">
+          <b-col cols="11" md="8" lg="5"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
               <blast-root :content="contact" />
             </h1>
@@ -11,19 +11,19 @@
               <b-form @submit.prevent="onSubmit">
                 <div class="form-group row">
                   <b-col>
-                    <input type="text" class="form-control b-control" v-model="form.name" placeHolder="Name"/>
+                    <input type="text" class="form-control b-control" v-model="form.name" placeholder="Name" required/>
                   </b-col>
                   <b-col>
-                    <input type="email" class="form-control b-control" v-model="form.email" placeHolder="Email" required/>
+                    <input type="email" class="form-control b-control" v-model="form.email" placeholder="Email" required/>
                   </b-col>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control b-control" v-model="form.subject"  placeHolder="Subject" />
+                  <input type="text" class="form-control b-control" v-model="form.subject"  placeholder="Subject" required/>
                 </div>
                 <div class="form-group">
-                  <textarea rows="5" v-model="form.message" class="form-control b-control" placeholder="Message"></textarea>
+                  <textarea rows="5" v-model="form.message" class="form-control b-control" placeholder="Message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-sm">HIT ME</button>
+                <button type="submit" :disabled="disableButton" class="btn btn-sm">{{ buttonText }}</button>
                 <span class="ml-1 text-white">
                   or
                   <b-link href="mailto:kunlexzy@gmail.com">send me an email</b-link>
@@ -49,7 +49,9 @@
     data() {
       return {
         contact: ['C','o','n','t','a','c','t'],
-        form: {}
+        form: {},
+        buttonText: 'HIT ME',
+        disableButton: false
       }
     },
     created() {
@@ -63,6 +65,8 @@
     methods: {
       onSubmit(e){
         // console.log(e.target)
+        this.buttonText = 'Please wait...'
+        this.disableButton = true
         var template_params = {
                     from_name: this.form.name,
                     reply_to: this.form.email,
@@ -71,10 +75,14 @@
                     };
         emailjs.send('gmail', 'template_Nb73pmI0', template_params, 'user_SdZ2PZgnf3ZniM3VVdfkA')
         .then((result) => {
-          alert('Your mail is sent!');
+          alert('Your mail is sent!')
+          this.buttonText = 'HIT ME'
+          this.disableButton = false
             //console.log('SUCCESS!', result.status, result.text);
         }, (error) => {
-           alert('Oops... ' + JSON.stringify(error));
+           alert('Oops... ' + 'Something went wrong')
+           this.buttonText = 'HIT ME'
+           this.disableButton = false
             //console.log('FAILED...', error);
         });
       }
