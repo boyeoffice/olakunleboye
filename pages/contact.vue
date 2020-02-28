@@ -11,20 +11,20 @@
               <b-form @submit.prevent="onSubmit">
                 <div class="form-group row">
                   <b-col>
-                    <input type="text" class="form-control b-control" v-model="form.name" placeholder="Name" required/>
+                    <input type="text" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.name }" v-model="form.name" placeholder="Name"/>
                   </b-col>
                   <b-col>
-                    <input type="email" class="form-control b-control" v-model="form.email" placeholder="Email" required/>
+                    <input type="email" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.email }" v-model="form.email" placeholder="Email" />
                   </b-col>
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control b-control" v-model="form.subject"  placeholder="Subject" required/>
+                  <input type="text" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.sub }" v-model="form.subject"  placeholder="Subject" />
                 </div>
                 <div class="form-group">
-                  <textarea rows="5" v-model="form.message" class="form-control b-control" placeholder="Message" required></textarea>
+                  <textarea rows="5" v-model="form.message" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.msg}" placeholder="Message" ></textarea>
                 </div>
-                <button type="submit" :disabled="disableButton" class="btn btn-sm">{{ buttonText }}</button>
-                <span class="ml-1 text-white">
+                <button type="submit" :disabled="disableButton" class="btn btn-sm animated fadeInUp">{{ buttonText }}</button>
+                <span class="ml-1 text-white animated fadeInUp">
                   or
                   <b-link href="mailto:kunlexzy@gmail.com">send me an email</b-link>
                 </span>
@@ -41,6 +41,35 @@
   import BlastRoot from '~/components/BlastRoot'
   import FormInput from '~/components/FormInput'
   import emailjs from 'emailjs-com'
+
+  const validateName = name => {
+    if (!name.length) {
+      return { valid: false, error: "This field is required" }
+    }
+    return { valid: true, error: null }
+  }
+
+  const validateEmail = email => {
+    if (!email.length) {
+      return { valid: false, error: "This field is required" }
+    }
+    return { valid: true, error: null }
+  }
+
+  const validateSubject = sub => {
+    if (!sub.length) {
+      return { valid: false, error: "This field is required" }
+    }
+    return { valid: true, error: null }
+  }
+
+  const validateMsg = msg => {
+    if (!msg.length) {
+      return { valid: false, error: "This field is required" }
+    }
+    return { valid: true, error: null }
+  }
+
   export default {
     components: {
       BlastRoot,
@@ -49,9 +78,16 @@
     data() {
       return {
         contact: ['C','o','n','t','a','c','t'],
-        form: {},
+        form: {
+          name: '',
+          subject: '',
+          email: '',
+          message: ''
+        },
         buttonText: 'HIT ME',
-        disableButton: false
+        disableButton: false,
+        errors: {},
+        valid: true
       }
     },
     created() {
@@ -63,8 +99,33 @@
       })
     },
     methods: {
-      onSubmit(e){
+      async onSubmit(e){
         // console.log(e.target)
+        // this.checkError()
+        this.errors = {}
+        const validName = await validateName(this.form.name)
+        this.errors.name = validName.error
+        if (this.valid) {
+          this.valid = validName.valid
+        }
+        const validEmail = await validateEmail(this.form.email)
+        this.errors.email = validEmail.error
+        if (this.valid) {
+          this.valid = validEmail.valid
+        }
+        const validSub = await validateSubject(this.form.subject)
+        this.errors.sub = validSub.error
+        if (this.valid) {
+          this.valid = validSub.valid
+        }
+        const validMsg = await validateMsg(this.form.message)
+        this.errors.msg = validMsg.error
+        if (this.valid) {
+          this.valid = validMsg.valid
+        }
+        if (!this.valid) {
+          return
+        }
         this.buttonText = 'Please wait...'
         this.disableButton = true
         var template_params = {
@@ -85,6 +146,11 @@
            this.disableButton = false
             //console.log('FAILED...', error);
         });
+      },
+      checkError() {
+        if(!this.form.name) {
+          this.error.name = true
+        }
       }
     }
   }
