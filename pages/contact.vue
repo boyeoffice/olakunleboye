@@ -7,7 +7,7 @@
               <blast-root :content="contact" />
             </h1>
             <p class="text-white">I am interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to contact me using below form either.</p>
-            <div class="mt-2">
+            <div class="mt-2 mb-5">
               <b-form @submit.prevent="onSubmit">
                 <div class="row">
                   <b-col cols="12" md="6" class="form-group">
