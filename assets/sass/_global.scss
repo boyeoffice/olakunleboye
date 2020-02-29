@@ -1,6 +1,9 @@
 body {
   background: $color2;
-  overflow: hidden;
+  overflow-x: hidden;
+  @include md {
+    overflow-y: hidden;
+  }
 }
 *,
 *:before,
