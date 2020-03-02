@@ -34,7 +34,7 @@
 			{name: 'Twitter', url: 'https://www.twitter.com/dev_boye', icon: 'fa fa-twitter'},
 			{name: 'Github', url: 'https://www.github.com/boyeoffice', icon: 'fa fa-github'},
 			{name: 'LinkedIn', url: 'https://linkedin.com/in/devboye', icon: 'fa fa-linkedin'},
-			{name: 'Instagram', url: 'https://instagram.com/in/devboye', icon: 'fa fa-instagram'}
+			{name: 'Instagram', url: 'https://instagram.com/dev_boye', icon: 'fa fa-instagram'}
 		],
 			links: [
 				{name: 'home', url: '/', icon: 'icon-hom'},
