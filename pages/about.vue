@@ -1,6 +1,7 @@
 <template lang="html">
   <div class="about">
-    <b-container>
+    <loading @update-view="show = true" />
+    <b-container v-if="show">
       <b-row>
           <b-col cols="11" md="6"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
@@ -21,7 +22,6 @@ import BlastRoot from '~/components/BlastRoot'
 import Loading from '~/components/Loading'
 import Carousel from '~/components/CarouselSlideUp'
 export default {
-  loading: false,
   head: {
     title: 'About me | Full Stack developer',
     meta: [
@@ -52,14 +52,6 @@ export default {
     }
   },
   mounted () {
-    this.$nextTick(() => {
-      this.$nuxt.$loading.start()
-
-      setTimeout(() => {
-        this.$nuxt.$loading.finish()
-        this.show = true
-      }, 5000)
-    })
   },
   methods: {
     updateClass (n) {

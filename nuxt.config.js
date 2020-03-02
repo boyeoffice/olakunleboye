@@ -44,7 +44,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: '~/components/Loading.vue', //{ name: 'cube-grid', color: '#fff' }, //'~/components/Loading.vue', //{ color: '#000' },
+  loading: false, //'~/components/Loading.vue', //{ name: 'cube-grid', color: '#fff' }, //'~/components/Loading.vue', //{ color: '#000' },
   /*
   ** Global CSS
   */

@@ -47,21 +47,52 @@ h1 {
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
 }
 .fade-enter, .fade-leave-to {
-  opacity: 0;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation: zoomOut;
 }
 /* Enter and leave animations can use different */
 /* durations and timing functions.              */
-.slide-fade-enter-active {
+/*.slide-fade-enter-active {
   transition: all .3s ease;
 }
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
+ {
   transform: translateX(10px);
   opacity: 0;
+}*/
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3,.3,.3);
+    transform: scale3d(.3,.3,.3);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3,.3,.3);
+    transform: scale3d(.3,.3,.3);
+  }
+  100% {
+    opacity: 0;
+  }
 }

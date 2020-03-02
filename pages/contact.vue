@@ -1,46 +1,56 @@
 <template lang="html">
-  <div class="contact">
-    <b-container fluid>
-      <b-row>
-          <b-col cols="12" md="8" lg="5"  class="content">
-            <h1 class="blast-root" aria-label=" About me ">
-              <blast-root :content="contact" />
-            </h1>
-            <p class="text-white">I am interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to contact me using below form either.</p>
-            <div class="mt-2 mb-5">
-              <b-form @submit.prevent="onSubmit">
-                <div class="row">
-                  <b-col cols="12" md="6" class="form-group">
-                    <input type="text" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.name }" v-model="form.name" placeholder="Name"/>
-                  </b-col>
-                  <b-col cols="12" md="6" class="form-group">
-                    <input type="email" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.email }" v-model="form.email" placeholder="Email" />
-                  </b-col>
-                </div>
-                <div class="form-group">
-                  <input type="text" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.sub }" v-model="form.subject"  placeholder="Subject" />
-                </div>
-                <div class="form-group">
-                  <textarea rows="5" v-model="form.message" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.msg}" placeholder="Message" ></textarea>
-                </div>
-                <button type="submit" :disabled="disableButton" class="btn btn-sm animated fadeInUp">{{ buttonText }}</button>
-                <span class="ml-1 text-white animated fadeInUp">
-                  or
-                  <b-link href="mailto:kunlexzy@gmail.com">send me an email</b-link>
-                </span>
-              </b-form>
-            </div>
-          </b-col>
-        </b-row>
-      </b-container>
-
-  </div>
+  <section class="contact">
+    <loading @update-view="show = true" />
+      <b-container fluid v-if="show" class="animated zoomIn">
+        <b-row>
+            <b-col cols="12" md="8" lg="5"  class="content">
+              <h1 class="blast-root" aria-label=" About me ">
+                <blast-root :content="contact" />
+              </h1>
+              <p class="text-white">I am interested in freelance opportunities – especially ambitious or large projects. However, if you have other request or question, don’t hesitate to contact me using below form either.</p>
+              <div class="mt-2 mb-5">
+                <b-form @submit.prevent="onSubmit">
+                  <div class="row">
+                    <b-col cols="12" md="6" class="form-group">
+                      <input type="text" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.name }" v-model="form.name" placeholder="Name"/>
+                    </b-col>
+                    <b-col cols="12" md="6" class="form-group">
+                      <input type="email" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.email }" v-model="form.email" placeholder="Email" />
+                    </b-col>
+                  </div>
+                  <div class="form-group">
+                    <input type="text" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.sub }" v-model="form.subject"  placeholder="Subject" />
+                  </div>
+                  <div class="form-group">
+                    <textarea rows="5" v-model="form.message" :class="{'form-control b-control animated fadeInUp': true, 'is-invalid': !!errors.msg}" placeholder="Message" ></textarea>
+                  </div>
+                  <button type="submit" :disabled="disableButton" class="btn btn-sm animated fadeInUp">{{ buttonText }}</button>
+                  <span class="ml-1 text-white animated fadeInUp">
+                    or
+                    <b-link href="mailto:kunlexzy@gmail.com">send me an email</b-link>
+                  </span>
+                </b-form>
+              </div>
+            </b-col>
+          </b-row>
+        </b-container>
+  </section>
 </template>
+
+<script>
+export default {
+}
+</script>
+
+<style lang="css" scoped>
+</style>
+
 
 <script>
   import BlastRoot from '~/components/BlastRoot'
   import FormInput from '~/components/FormInput'
   import emailjs from 'emailjs-com'
+  import Loading from '~/components/Loading'
 
   const validateName = name => {
     if (!name.length) {
@@ -98,7 +108,8 @@ const validatePhone = phone => {
   export default {
     components: {
       BlastRoot,
-      FormInput
+      FormInput,
+      Loading
     },
     data() {
       return {
@@ -113,15 +124,19 @@ const validatePhone = phone => {
         disableButton: false,
         errors: {},
         valid: true,
+        show: false
       }
     },
     created() {
       //do something after mounting vue instance
-      this.$nextTick(() => {
+      /*this.$nextTick(() => {
         this.$nuxt.$loading.start()
 
-        setTimeout(() => this.$nuxt.$loading.finish(), 5000)
-      })
+        setTimeout(() => {
+          this.$nuxt.$loading.finish()
+          this.show = true
+        }, 7000)
+      })*/
     },
     methods: {
       async onSubmit(e){
@@ -177,13 +192,19 @@ const validatePhone = phone => {
             //console.log('FAILED...', error);
         });
       },
-      checkError() {
+      clearForm() {
         this.form = {
           name: '',
           subject: '',
           email: '',
           message: ''
         }
+      },
+      beforeEnter() {
+        this.show = false
+      },
+      afterEnter () {
+        this.show = true
       }
     }
   }

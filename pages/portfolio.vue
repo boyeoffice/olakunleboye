@@ -1,5 +1,15 @@
 <template>
-  <div class="container skills">
+  <section class=" skills">
+    <loading />
     <div class="content"></div>
-  </div>
+  </section>
 </template>
+
+<script>
+import Loading from '~/components/Loading'
+  export default {
+    components: {
+      Loading
+    }
+  }
+</script>

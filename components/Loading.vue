@@ -1,5 +1,5 @@
 <template lang="html">
-  <div v-show="show" class="preloader bg-dark">
+  <div v-show="show" :class="[{'preloader bg-dark': true}, className]">
     <div class="inner">
       <img src="/img/cooltext349167867806161.png" alt="Olakunle Boye">
   		<img src="/img/349168519845770.png" alt="Olakunle Boye" style="width: 27px;">
@@ -15,7 +15,8 @@ export default {
     return {
       percent: 0,
       duration: 1000,
-      show: false
+      show: false,
+      className: ''
     }
   },
   mounted(){
@@ -24,10 +25,12 @@ export default {
   methods: {
     start() {
       this.show = true
+      this.className = 'animated fadeInLeft'
       this._cut = 10000 / Math.floor(this.duration)
       this._timer = setInterval(() => {
         this.increase(this._cut * Math.random())
-        if(this.percent > 95) {
+        if(this.percent > 97) {
+          this.className = 'animated fadeOutRight'
           this.finish()
         }
       }, 100);
@@ -45,8 +48,11 @@ export default {
     hide() {
       clearInterval(this._timer)
       this._timer = null
-      this.show = false
-      setTimeout(() => this.percent = 0, 200)
+      setTimeout(() => {
+        this.show = false
+        this.percent = 0
+        this.$emit('update-view')
+      }, 500)
       return this
     }
   },

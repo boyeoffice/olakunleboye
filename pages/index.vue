@@ -1,7 +1,8 @@
 <template>
-  <div>
-  <div v-show="show" class="home-page">
-    <b-container fluid>
+  <div class="home-page">
+    <loading @update-view="show = true" />
+    <div v-if="show">
+    <b-container fluid class="animated zoomIn">
       <b-row class="">
         <b-col cols="11" md="8"  class="content">
           <h1 class="blast-root">
@@ -27,7 +28,6 @@
 import Loading from '~/components/Loading'
 import BlastRoot from '~/components/BlastRoot'
   export default {
-    loading: false,
     components: {
       Loading,
       BlastRoot
@@ -47,11 +47,7 @@ import BlastRoot from '~/components/BlastRoot'
     },
     created () {
       this.$nextTick(() => {
-        this.$nuxt.$loading.start()
-
-        setTimeout(() => this.$nuxt.$loading.finish(), 5000)
         this.avatar = '/img/PicsArt_1435780508022.jpg'
-        this.show = true
       })
     },
 
