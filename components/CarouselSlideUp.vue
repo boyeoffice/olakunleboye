@@ -32,23 +32,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css" scoped>
-  .slide-content {
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    flex-direction: column;
-    color: #fff;
-  }
-  .slide-content .slide-text {
-    width: 100%;
-    height: 100%;
-    display: none;
-  }
-  .slide-text.active {
-    display: block;
-  }
-</style>

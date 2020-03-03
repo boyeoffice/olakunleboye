@@ -3,7 +3,7 @@
     <loading @update-view="show = true" />
     <b-container v-if="show" fluid>
       <b-row>
-          <b-col cols="11" md="5"  class="content">
+          <b-col cols="11" md="6" lg="5"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
               <blast-root :content="about" />
               <blast-root :content="me" />

@@ -3,6 +3,9 @@
     margin-top: 170px;
     position: static;
     left: 5%;
-    margin-left: 8%;
+    margin-left: 6%;
+    @include md {
+      margin-left: 8%;
+    }
   }
 }
