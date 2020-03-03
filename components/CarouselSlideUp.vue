@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="slide-content">
-    <div v-for="(data, index) in slides" :class="[{'slide-text': true, 'active': selected === index}, data.transition]">
-      {{ data.text }}
+    <div v-for="(data, index) in slides" :class="[{'slide-text': true, 'active': selected === index}, data.transition]" v-html="data.text">
+
     </div>
   </div>
 </template>

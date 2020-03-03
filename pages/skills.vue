@@ -3,7 +3,7 @@
     <loading @update-view="show = true" />
     <b-container class="animated zoomIn" v-if="show" fluid>
       <b-row>
-          <b-col cols="11" md="6"  class="content">
+          <b-col cols="11" md="5"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
               <blast-root :content="skills" />
               <blast-root :content="and" /><br />
@@ -37,10 +37,10 @@
         and: ['&'],
         exp: ['E','x','p','e','r','i','e','n','c','e'],
         content: [
-          {text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 0 '},
-          {text:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.1'},
-          {text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 2 '},
-          {text:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 3'}
+          {text:'I have over 3 years exprience working as a full-stack developer, both Freelance and Remote. Over the years, have used open source CMS like wordpress...'},
+          {text:'I enjoy working with  this popular editors(Sublime, Atom and Vscode). <br/> Strong database knowledge in Mysql, Postgresql and Mongodb. <br/> Extensive knowledge of serverless and lambda function...'},
+          {text:'Proficient in PHP, Laravel, NodeJS, VueJS, ExpressJS and Codeigniter. <br/> Experienced using unit test and Mocha for testing...'},
+          {text:'Clean, modern designs - optimized for performance, search engines and conversting users tp customers.<br/> Familiar with Apache and Nginx.'}
         ],
         show: false
       }

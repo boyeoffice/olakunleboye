@@ -3,7 +3,7 @@
     <loading @update-view="show = true" />
     <b-container v-if="show" fluid>
       <b-row>
-          <b-col cols="11" md="6"  class="content">
+          <b-col cols="11" md="5"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
               <blast-root :content="about" />
               <blast-root :content="me" />
@@ -43,10 +43,8 @@ export default {
       me: ['m','e'],
       show: false,
       content: [
-        {text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 0 '},
-        {text:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.1'},
-        {text:'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 2 '},
-        {text:'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 3'}
+        {text:'Olakunle Boye is a self taught programmer currently working at Accede Growth, he have passion for writing code that solve problems and making web accessible to everyone... '},
+        {text:'Since the beginning of my journey as a software engineer nearly 3.5 years, have done remote work for angencies, startups and collaborated with talented people to create digital products for business and consumer use...'},
       ],
       selected: 0
     }
@@ -55,7 +53,7 @@ export default {
   },
   methods: {
     updateClass (n) {
-      if(n > 3) {
+      if(n > 1) {
         n = 0
       }
       //this.content[this.selected].transition = 'active animated bounceOut'
