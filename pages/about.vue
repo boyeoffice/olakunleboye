@@ -1,9 +1,9 @@
 <template lang="html">
-  <div class="about">
+  <section class="about">
     <loading @update-view="show = true" />
     <b-container v-if="show" fluid>
       <b-row>
-          <b-col cols="11" md="6" lg="5"  class="content">
+          <b-col cols="11" md="6" lg="4"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
               <blast-root :content="about" />
               <blast-root :content="me" />
@@ -14,7 +14,10 @@
           </b-col>
       </b-row>
     </b-container>
-  </div>
+    <div class="_hr53e">
+      <img src="/img/hero.svg" alt="">
+    </div>
+  </section>
 </template>
 
 <script>
@@ -43,8 +46,8 @@ export default {
       me: ['m','e'],
       show: false,
       content: [
-        {text:'Olakunle Boye is a self taught programmer currently working at Accede Growth, he have passion for writing code that solve problems and making web accessible to everyone... '},
-        {text:'Since the beginning of my journey as a software engineer nearly 3.5 years, have done remote work for angencies, startups and collaborated with talented people to create digital products for business and consumer use...'},
+        {text:'I am a self taught programmer currently working at Accede Growth, he have passion for writing code that solve problems and making web accessible to everyone... '},
+        {text:'Since the beginning of my journey as a software engineer nearly 3.5 years, have done remote work for angencies, startups and collaborated with talented people to create digital products for business and consumer use.'},
       ],
       selected: 0
     }

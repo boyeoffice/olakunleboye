@@ -9,3 +9,16 @@
     }
   }
 }
+
+._hr53e {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  top: 42%;
+  transform: translateY(-50%);
+  display: none;
+  @include lg {
+    display: block;
+  }
+  animation: myanim2 1.5s 1.9s backwards;
+}

@@ -1,9 +1,9 @@
 <template lang="html">
-  <div class="skills">
+  <section class="skills">
     <loading @update-view="show = true" />
     <b-container class="animated zoomIn" v-if="show" fluid>
       <b-row>
-          <b-col cols="11" md="5"  class="content">
+          <b-col cols="11" md="5" lg="4"  class="content">
             <h1 class="blast-root" aria-label=" About me ">
               <blast-root :content="skills" />
               <blast-root :content="and" /><br />
@@ -15,7 +15,15 @@
           </b-col>
         </b-row>
       </b-container>
-  </div>
+      <div class="_h4sjf">
+        <div id="pyramid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+  </section>
 </template>
 
 <script>
