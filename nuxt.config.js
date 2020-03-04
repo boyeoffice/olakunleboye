@@ -10,7 +10,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { property: "og:site_name", content: "Fullstack Developer | WordPress Expert | Remote Developer"},
-      
+
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
       {name:"twitter:site", content: "@dev_boye"},
       {name:"twitter:creator", content: "@dev_boye"},
@@ -44,7 +44,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { name: 'cube-grid', color: '#fff' }, //'~/components/Loading.vue', //{ color: '#000' },
+  loading: false, //'~/components/Loading.vue', //{ name: 'cube-grid', color: '#fff' }, //'~/components/Loading.vue', //{ color: '#000' },
   /*
   ** Global CSS
   */
@@ -68,6 +68,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     //'@nuxtjs/axios',
     '@nuxtjs/pwa',
+    'bootstrap-vue/nuxt'
   ],
   /*
   ** Axios module configuration

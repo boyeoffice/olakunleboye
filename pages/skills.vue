@@ -1,51 +1,73 @@
-<template>
-  <div class="container skills">
-    <div class="content">
-      <h1 class="blast-root">
-        <blast-root :content="skills" />
-        <blast-root :content="and" /><br />
-        <blast-root :content="exp" />
-      </h1>
-      <p class="LEFT">
-        I have over three years of experience in software engineering(frontend,backend and devsop).
-      </p>
-      <p class="LEFT">
-        ReactJS, VueJS, NuxtJS, building small and medium web applications with CSS, features, lazyload image,
-        animations
-      </p>
-      <p class="LEFT">
-        I also have full-stack developer experience with Laravel, NodeJS and opensource CMS like wordpress.
-      </p>
-      <p class="LEFT">
-        Visit my <a href="https://www.fiverr.com/devboye" target="_blank">FIVERR</a> profile for more details or just <nuxt-link to="/contact"> contact </nuxt-link> me
-      </p>
-    </div>
-    <div class="clear"></div>
-    <div class="skills-charts">
-      <div id="myCanvasContainer">
-        <canvas id="myCanvas" width="500" height="500">
-          <ul><li> <a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML 5</a></li><li><a data-weight="25" href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a></li><li><a data-weight="25" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a></li><li><a data-weight="25" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank">TypeScript</a></li><li><a data-weight="24" href="https://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank">REST</a></li><li><a data-weight="14" href="https://en.wikipedia.org/wiki/JSON" target="_blank">JSON</a></li><li><a data-weight="13" href="https://en.wikipedia.org/wiki/XML" target="_blank">XML</a></li><li><a data-weight="27" href="https://en.wikipedia.org/wiki/AngularJS" target="_blank">Angular 2+</a></li><li><a data-weight="26" href="https://en.wikipedia.org/wiki/WordPress" target="_blank">Wordpress</a></li><li><a data-weight="21" href="https://en.wikipedia.org/wiki/Node.js" target="_blank">Node JS</a></li><li><a data-weight="17" href="https://en.wikipedia.org/wiki/Git" target="_blank">Git</a></li><li><a data-weight="17" href="" target="_blank">_lodash</a></li><li><a data-weight="23" href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)" target="_blank">Bootstrap</a></li><li><a data-weight="15" href="https://en.wikipedia.org/wiki/Sass_(stylesheet_language)" target="_blank">SASS</a></li><li><a data-weight="20" href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">RxJs</a></li><li><a data-weight="19" href="https://en.wikipedia.org/wiki/JQuery" target="_blank">jQuery</a></li><li><a data-weight="19" href="http://mongoosejs.com/" target="_blank">NoSQl</a></li><li><a data-weight="19" href="https://karma-runner.github.io/1.0/index.html" target="_blank">Karma</a></li><li><a data-weight="19" href="http://gulpjs.com/" target="_blank">Gulp</a></li><li><a data-weight="19" href="https://www.npmjs.com/" target="_blank">npm</a></li><li><a data-weight="19" href="https://bower.io/" target="_blank">Bower</a></li><li><a data-weight="19" href="https://en.wikipedia.org/wiki/BEM" target="_blank">BEM</a></li></ul>
-        </canvas>
+<template lang="html">
+  <section class="skills">
+    <loading @update-view="show = true" />
+    <b-container class="animated zoomIn" v-if="show" fluid>
+      <b-row>
+          <b-col cols="11" md="5" lg="4"  class="content">
+            <h1 class="blast-root" aria-label=" About me ">
+              <blast-root :content="skills" />
+              <blast-root :content="and" /><br />
+              <blast-root :content="exp" />
+            </h1>
+            <div class="mt-4">
+              <carousel @update-class="updateClass" :slides="content" />
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
+      <div class="_h4sjf">
+        <div id="pyramid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
   import BlastRoot from '~/components/BlastRoot'
+  import Carousel from '~/components/CarouselSlideUp'
+  import Loading from '~/components/Loading'
   export default {
     head: {
       title: 'Skills & Experience | Full Stack Developer'
     },
     components: {
-      BlastRoot
+      BlastRoot,
+      Carousel,
+      Loading
     },
     data() {
       return {
         skills: ['S','k','i','l','l','s'],
         and: ['&'],
-        exp: ['E','x','p','e','r','i','e','n','c','e']
+        exp: ['E','x','p','e','r','i','e','n','c','e'],
+        content: [
+          {text:'I have over 3 years exprience working as a full-stack developer, both Freelance and Remote. Over the years, have used open source CMS like wordpress...'},
+          {text:'I enjoy working with  this popular editors(Sublime, Atom and Vscode). <br/> Strong database knowledge in Mysql, Postgresql and Mongodb. <br/> Extensive knowledge of serverless and lambda function...'},
+          {text:'Proficient in PHP, Laravel, NodeJS, VueJS, ExpressJS and Codeigniter. <br/> Experienced using unit test and Mocha for testing...'},
+          {text:'Clean, modern designs - optimized for performance, search engines and conversting users tp customers.<br/> Familiar with Apache and Nginx.'}
+        ],
+        show: false
+      }
+    },
+    mounted () {
+
+    },
+    methods: {
+      updateClass (n) {
+        if(n > 3) {
+          n = 0
+        }
+        //this.content[this.selected].transition = 'active animated bounceOut'
+        this.content[n].transition = 'animated slideInUp'
+        //this.selected = n
       }
     }
   }
 </script>
+
+<style lang="css" scoped>
+</style>

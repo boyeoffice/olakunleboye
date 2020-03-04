@@ -1,37 +1,30 @@
-<template>
-  <div class="container about">
-    <div class="content">
-      <h1 class="blast-root" aria-label=" About me ">
-        <blast-root :content="about" />
-        <blast-root :content="me" />
-      </h1>
-      <p class="LEFT">
-        A self taught programmer who have passion for writing code that solve problems.
-      </p>
-      <p class="LEFT">
-        Well-organised person, problem solver, remote developer with high to attention to detail.
-        Professionally worked with quiet number of clients both in Nigeria and abroad.
-      </p>
-      <p class="LEFT">
-        I love exploring new technologies and often amazed by the progress we as a human species have made so far in the recent years.
-         Also love watching SCI-FI movies.
-      </p>
-      <img src="/img/timeline.png" style="max-width: 95%; margin-top: 40px;" alt="">
-      <div class="clear"></div>
+<template lang="html">
+  <section class="about">
+    <loading @update-view="show = true" />
+    <b-container v-if="show" fluid>
+      <b-row>
+          <b-col cols="11" md="6" lg="4"  class="content">
+            <h1 class="blast-root" aria-label=" About me ">
+              <blast-root :content="about" />
+              <blast-root :content="me" />
+            </h1>
+            <div class="mt-4">
+              <carousel @update-class="updateClass" :slides="content" />
+            </div>
+          </b-col>
+      </b-row>
+    </b-container>
+    <div class="_hr53e">
+      <img src="/img/hero.svg" alt="">
     </div>
-    <section id="pyramid">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
-  </div>
+  </section>
 </template>
 
 <script>
 import BlastRoot from '~/components/BlastRoot'
+import Loading from '~/components/Loading'
+import Carousel from '~/components/CarouselSlideUp'
 export default {
-  loading: false,
   head: {
     title: 'About me | Full Stack developer',
     meta: [
@@ -43,37 +36,33 @@ export default {
     ]
   },
   components: {
-    BlastRoot
+    BlastRoot,
+    Loading,
+    Carousel
   },
   data() {
     return {
       about: ['A','b','o','u','t'],
-      me: ['m','e']
+      me: ['m','e'],
+      show: false,
+      content: [
+        {text:'I am a self taught programmer currently working at Accede Growth, he have passion for writing code that solve problems and making web accessible to everyone... '},
+        {text:'Since the beginning of my journey as a software engineer nearly 3.5 years, have done remote work for angencies, startups and collaborated with talented people to create digital products for business and consumer use.'},
+      ],
+      selected: 0
     }
   },
-  asyncData () {
-    return new Promise((resolve) => {
-      setTimeout(function () {
-       // this.$nuxt.$loading.finish()
-        resolve({})
-      }, 1000)
-    })
-  },
   mounted () {
-    setTimeout(() => {
-      // Extend loader for an additional 5s
-      this.$nuxt.$loading.finish()
-    }, 1000)
   },
   methods: {
-   /* goToFinal () {
-      // Start loader immediately
-      this.$nuxt.$loading.start()
-      // Actually change route 5s later
-      setTimeout(() => {
-        this.$router.push('/final')
-      }, 5000)
-    }*/
+    updateClass (n) {
+      if(n > 1) {
+        n = 0
+      }
+      //this.content[this.selected].transition = 'active animated bounceOut'
+      this.content[n].transition = 'animated zoomIn'
+      this.selected = n
+    }
   }
 }
 </script>

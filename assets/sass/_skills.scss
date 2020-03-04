@@ -1,31 +1,94 @@
 .skills {
   & .content {
+    margin-top: 170px;
+    position: static;
+    left: 5%;
+    margin-left: 6%;
+    @include md {
+      margin-left: 8%;
+    }
+  }
+}
+
+._h4sjf {
+  animation: myanim2 1.5s 1.9s backwards;
+}
+#pyramid {
+  display: none;
+  @include lg {
+    display: block;
+  }
+
+  position: absolute;
+  left: 50%;
+  margin-left: 120px;
+  top: 50%;
+  margin-top: -210px;
+  height: 500px;
+  width: 100px;
+  transform-style: preserve-3d;
+  animation: spin 10s linear infinite;
+  transform-origin: 116px 200px 116px;
+
+  & div {
     position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
-    display: table-cell;
-    max-height: 90%;
-    width: 80%;
-    @include lg {
-      width: 30%;
-    }
-    & h1 {
+    border-style: solid;
+    border-width: 200px 0 200px 346px;
+    transform-origin: 0 0;
+
+    &::after {
+      position: absolute;
       color: $color3;
-      margin-bottom: 40px;
-      & .blast {
-        will-change: transform;
-        transition: all .3s ease-out;
-        display: inline-block;
+      left: -311px;
+      top: -69px;
+      text-align: center;
+      opacity: .6;
+    }
+
+    &:first-child {
+      border-color: transparent transparent transparent rgba(50, 50, 50, .6);
+      transform: rotateY(-19.5deg) rotateX(180deg) translateY(-400px);
+
+      &::after {
+        content: url(/img/58480e35cef1014c0b5e4920.png);
       }
     }
-    & p {
-      color: $color3;
-      font-family: "Open Sans",sans-serif;
-      font-weight: 300;
-      a {
-        color: $color1;
+
+    &:nth-child(2) {
+      border-color: transparent transparent transparent rgba(50, 50, 50, .6);
+      transform: rotateY(90deg) rotateZ(60deg) rotateX(180deg) translateY(-400px);
+
+      &::after {
+        content: url(/img/logo2.png);
       }
     }
+
+    &:nth-child(3) {
+      border-color: transparent transparent transparent rgba(50, 50, 50, .9);
+      transform: rotateX(60deg) rotateY(19.5deg);
+
+      &::after {
+        content: url(/img/logo3.png);
+      }
+    }
+
+    &:nth-child(4) {
+      border-color: transparent transparent transparent rgba(50, 50, 50, .8);
+      transform: rotateX(-60deg) rotateY(19.5deg) translateX(-116px) translateY(-200px) translateZ(326px);
+
+      &::after {
+        content: url(/img/58482acecef1014c0b5e4a1e.png);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
   }
 }
