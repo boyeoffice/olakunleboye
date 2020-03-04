@@ -48,7 +48,7 @@
           {text:'I have over 3 years exprience working as a full-stack developer, both Freelance and Remote. Over the years, have used open source CMS like wordpress...'},
           {text:'I enjoy working with  this popular editors(Sublime, Atom and Vscode). <br/> Strong database knowledge in Mysql, Postgresql and Mongodb. <br/> Extensive knowledge of serverless and lambda function...'},
           {text:'Proficient in PHP, Laravel, NodeJS, VueJS, ExpressJS and Codeigniter. <br/> Experienced using unit test and Mocha for testing...'},
-          {text:'Clean, modern designs - optimized for performance, search engines and conversting users tp customers.<br/> Familiar with Apache and Nginx.'}
+          {text:'Clean, modern designs - optimized for performance, search engines and conversting users to customers.<br/> Familiar with Apache and Nginx.'}
         ],
         show: false
       }
