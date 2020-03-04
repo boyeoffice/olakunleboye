@@ -46,7 +46,7 @@ export default {
       me: ['m','e'],
       show: false,
       content: [
-        {text:'I am a self taught programmer currently working at Accede Growth, he have passion for writing code that solve problems and making web accessible to everyone... '},
+        {text:'I am a self taught programmer currently working at Accede Growth, I have passion for writing code that solve problems and making web accessible to everyone... '},
         {text:'Since the beginning of my journey as a software engineer nearly 3.5 years, have done remote work for angencies, startups and collaborated with talented people to create digital products for business and consumer use.'},
       ],
       selected: 0
