@@ -36,7 +36,8 @@ export default {
       { rel: 'icon', sizes: '96x96', href: '/icon/favicon-96x96.png' },
       { rel: 'icon', type: 'image/x-icon', href: '/icon/favicon.ico' },
       { rel: 'manifest', href: '/icon/manifest.json' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oswald&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600|Roboto Mono&display=swap' },
+     // { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Oswald&display=swap' },
       {rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'},
       {rel: 'stylesheet', href: './css/animate.css'}
     ]

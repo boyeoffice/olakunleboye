@@ -1,6 +1,7 @@
 body {
   background: $color2;
   overflow-x: hidden;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   @include md {
     overflow-y: hidden;
   }
@@ -16,10 +17,10 @@ img {
 
 a.active, a:hover {
   color: $color1 !important;
+  opacity: 1 !important;
 }
 a:focus {
   outline: none;
-  color: $color1 !important;
 }
 h1 {
   font-size: 47px;
