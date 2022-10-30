@@ -1,31 +1,12 @@
 {
   "name": "olakunleboye",
-  "version": "1.0.0",
-  "description": "A self taught programmer who have passion for writing code that solve problems. Well-organised person, problem solver, remote developer [&hellip;]",
-  "author": "Olakunle Boye",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "test": "jest"
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.9.0",
-    "@nuxtjs/pwa": "^3.0.0-0",
-    "bootstrap-vue": "^2.5.0",
-    "emailjs-com": "^2.4.1",
-    "node-sass": "^4.13.0",
-    "nuxt": "^2.11.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.2",
-    "vue2-animate": "^2.1.3"
-  },
-  "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.30",
-    "babel-jest": "^24.1.0",
-    "jest": "^24.1.0",
-    "vue-jest": "^4.0.0-0"
+    "gridsome": "^0.7.0"
   }
 }
